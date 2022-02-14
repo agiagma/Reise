@@ -4,17 +4,82 @@
     box-sizing: border-box;
 }
 header{
-
+    display: flex;
+    flex-flow: wrap row;
+    flex-basis: 100%;
+    height: 100px;
+}
+header img{
+    height: 80px;
+    width: 70px;
 }
 nav{
-
+    display: flex;
+    flex-flow: wrap row;
 }
 nav ul{
-
+    list-style: none;
 }
 nav a{
 
 }
+main{
+    padding: 2em 2em 2em 2em;
+}
 .grid-content{
-    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1em 2em;
+    grid-template-areas: "west north east";
+    grid-template-areas: "south south south";
+}
+.west-container{
+    grid-area: west;
+}
+.north-container{
+    grid-area: north;
+}
+.east-container{
+    grid-area: east;
+}
+.south-container{
+    grid-area: south;
+}
+.south-grid-span-col-3{
+    grid-column: span 3;
+}
+/* content styling */
+/* kanada usa alaska grönland */
+.west-container{
+    display: flex;
+    flex-flow: wrap row;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.kanada{
+    width: 50%;
+    background-image: url('Bilder/Laender/kanada.jfif');
+    transition: 0.9;
+}
+.kanada:hover{
+    transform: scale(1.2);
+}
+.usa{
+    width: 50%;
+    background-image: url('Bilder/Laender/usa.jfif');
+}
+.alaska{
+    width: 50%;
+    background-image: url('Bilder/Laender/alaska.jfif');
+}
+.groenland{
+    width: 50%;
+    background-image: url('Bilder/Laender/groenland.jfif');
+}
+.flagge{
+    height: 40px;
+    width: 60px;
+    opacity: .8;
 }
