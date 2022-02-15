@@ -10,13 +10,18 @@
 </head>
 <body>
     <header>
+        <div class="header-img-text">
         <img src="Bilder/pizza.gif" alt="">
         <div class="header-text">
         <h1>Willkommen zu Seeman-Reise</h1>
         <p>Cooler Werbeslogan der mir nicht einfällt</p>
         </div>
-        <nav>
-            <ul>
+        </div>
+        <nav class="navigation">
+            <button class="navbutton" aria-expanded="false" aria-controls="navi-liste">
+                ☰ Menü
+              </button>
+            <ul class="navi-liste">
                 <li><a href="">Info</a></li>
                 <li><a href="">Buchung</a></li>
                 <li><a href="">Login</a></li>
@@ -89,9 +94,30 @@
                 <div class="south-container south-grid-span-col-3">
                     <div class="hawaii">
                         <h1>Hawaii</h1>
+                        <div class="img-slider fade">
+                            <img src="Bilder/Panorama/hawaii1.jpg" alt="">
+                        </div>
+                        <div class="img-slider fade">
+                            <img src="Bilder/Panorama/hawaii2.jpg" alt="">
+                        </div>
+                        <div class="img-slider fade">
+                            <img src="Bilder/Panorama/hawaii3.jpg" alt="">
+                        </div>
+                        <div class="img-slider fade">
+                            <img src="Bilder/Panorama/hawaii4.jpg" alt="">
+                        </div>
                     </div>
                     <div class="malediven">
                         <h1>Malediven</h1>
+                        <div class="img-slider fade">
+                            <img src="Bilder/Panorama/maldives1.jpg" alt="">
+                        </div>
+                        <div class="img-slider fade">
+                            <img src="Bilder/Panorama/maldives3.jpg" alt="">
+                        </div>
+                        <div class="img-slider fade">
+                            <img src="Bilder/Panorama/maldives4.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,5 +126,26 @@
     <footer>
 
     </footer>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        </script>
 </body>
 </html>
