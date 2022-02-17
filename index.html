@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen and (min-width: 1441px)" href="maxrange.css">
     <link rel="stylesheet" media="screen and (min-width: 900px) and (max-width: 1440px)" href="style.css">
     <link rel="stylesheet" media="screen and (min-width: 426px) and (max-width: 900px)" href="tablet.css">
     <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 425px)" href="mobile.css">
@@ -28,7 +29,7 @@
               </button>
             <ul class="navi-liste">
                 <li><a href="">Info</a></li>
-                <li><a href="">Buchung</a></li>
+                <li><a href="buchung.html">Buchung</a></li>
                 <li><a href="">Login</a></li>
             </ul>
         </nav>
@@ -111,6 +112,7 @@
                         <div class="img-slider fade">
                             <img src="Bilder/Panorama/hawaii4.jpg" alt="">
                         </div> 
+                        
                     </div>
                     <div class="malediven">
                         <h1>Malediven</h1>
@@ -131,6 +133,16 @@
     <footer>
 
     </footer>
-   
+    <script>
+        const hamburger = document.querySelector('button[aria-expanded]');
+    
+        function klappNav({
+          target
+        }) {
+          const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+          hamburger.setAttribute('aria-expanded', !expanded);
+        }
+        hamburger.addEventListener('click', klappNav);
+      </script>
 </body>
 </html>

@@ -43,22 +43,21 @@ nav ul {
   }
   nav li {
     margin: 2px 0px;
-    background: #222;
+    /* background: #222; */
   }
   .navigation button {
       position: absolute;
       top: 8rem;
-      right: 9rem;
+      right: 16rem;
       border: 0;
     background: rgb(255, 255, 255);
     color: black;
     font-size: inherit;
     display: block;
+    
   }
   .navigation ul {
-    display: none;
-    margin-top: 2rem;
-    margin-left: 1rem;
+    display: none;   
   }
   [aria-expanded="true"]~ul {
     display: block;
@@ -95,23 +94,17 @@ main{
     color: rgb(189, 42, 111);
     text-shadow: 1px 1px;  
 }
-.west-container, .north-container{
+.west-container, .north-container, .east-container, .south-container{
     display: flex;
     flex-flow: wrap column;
-    /* visual debugging border delete after */
-    border: 1px solid black;
     align-content: center;
-    /* height: 100%;
-    width: 100%; */
-}
-.kanada{
-    background-image: url('Bilder/Laender/kanada.jfif');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 60% 100%;
-    display: flex;
+    height: 100%;
     width: 100%;
-    flex-flow: wrap column;
-    align-content: center;
-    
+    word-break: break-all;
+}
+.south-container img{
+    display: none;
+}
+.south-container{
+    display: none;
 }
