@@ -1,9 +1,14 @@
-const hamburger = document.querySelector('button[aria-expanded]');
+var myIndex = 0;
+carousel();
 
-    function klappNav({
-      target
-    }) {
-      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
-      hamburger.setAttribute('aria-expanded', !expanded);
-    }
-    hamburger.addEventListener('click', klappNav);
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("hawaii");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000);
+}

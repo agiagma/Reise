@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px) and (max-width: 1440px)" href="style.css">
+    <link rel="stylesheet" media="screen and (min-width: 426px) and (max-width: 900px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 425px)" href="mobile.css">
     <script src="javaScript.JS"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
     <title>Reise, Reise, Seeman Reise</title>
 </head>
 <body>
@@ -13,8 +18,8 @@
         <div class="header-img-text">
         <img src="Bilder/pizza.gif" alt="">
         <div class="header-text">
-        <h1>Willkommen zu Seeman-Reise</h1>
-        <p>Cooler Werbeslogan der mir nicht einfällt</p>
+        <h1 class="firmen-name">Willkommen zu Seeman-Reise</h1>
+        <p class="firmen-slogan">Cooler Werbeslogan der mir nicht einfällt</p>
         </div>
         </div>
         <nav class="navigation">
@@ -92,7 +97,7 @@
             </div>
             <div class="grid-item4 south">
                 <div class="south-container south-grid-span-col-3">
-                    <div class="hawaii">
+                    <!-- <div class="hawaii">
                         <h1>Hawaii</h1>
                         <div class="img-slider fade">
                             <img src="Bilder/Panorama/hawaii1.jpg" alt="">
@@ -105,7 +110,7 @@
                         </div>
                         <div class="img-slider fade">
                             <img src="Bilder/Panorama/hawaii4.jpg" alt="">
-                        </div>
+                        </div> 
                     </div>
                     <div class="malediven">
                         <h1>Malediven</h1>
@@ -118,7 +123,7 @@
                         <div class="img-slider fade">
                             <img src="Bilder/Panorama/maldives4.jpg" alt="">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -126,26 +131,6 @@
     <footer>
 
     </footer>
-    <script>
-        var slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("dot");
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {slideIndex = 1}    
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-          setTimeout(showSlides, 2000); // Change image every 2 seconds
-        }
-        </script>
+   
 </body>
 </html>

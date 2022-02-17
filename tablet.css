@@ -256,10 +256,10 @@ main{
 .hawaii{
     position: relative;
     height: 50%;
-    width: 70%;
+    width: 80%;
     background-image: url('Bilder/Panorama/hawaii1.jpg');
     text-align: center;
-    background-position: center;
+    background-position: left top;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* display: none; */
