@@ -69,6 +69,7 @@ nav ul {
     width: 70px;
     padding: 0 0 4px 0;
     opacity: 0.9;
+    filter: blur(0.4px);
 }
 
 
@@ -94,13 +95,14 @@ main{
     color: rgb(189, 42, 111);
     text-shadow: 1px 1px;  
 }
-.west-container{
+.west-container, .north-container{
     display: flex;
     flex-flow: wrap column;
+    /* visual debugging border delete after */
     border: 1px solid black;
     align-content: center;
-    height: 100%;
-    width: 100%;
+    /* height: 100%;
+    width: 100%; */
 }
 .kanada{
     background-image: url('Bilder/Laender/kanada.jfif');
