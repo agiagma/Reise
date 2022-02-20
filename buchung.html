@@ -4,35 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" media="screen and (min-width: 1441px)" href="maxrange.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px) and (max-width: 1440px)" href="style.css">
+    <link rel="stylesheet" media="screen and (min-width: 426px) and (max-width: 900px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 425px)" href="mobile.css">
+    <title>Buchung</title>
 </head>
 <body>
     <header>
-   
+      <div class="header-img-text">
+        <img src="Bilder/pizza.gif" alt="">
+        <div class="header-text">
+        <h1 class="firmen-name">Willkommen zu Seeman-Reise</h1>
+        <p class="firmen-slogan">Cooler Werbeslogan der mir nicht einfällt</p>
+        </div>
+        </div>
+        <nav class="navigation">
+            <button class="navbutton" aria-expanded="false" aria-controls="navi-liste">
+                ☰ Menü
+              </button>
+            <ul class="navi-liste">
+                <li><a href="index.html">Info</a></li>
+                <li><a href="buchung.html">Buchung</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <form action="action_page.php">
-      
+    <main>
+    <div class="buchung-container">
+       
           <label for="fname">First Name</label>
           <input type="text" id="fname" name="firstname" placeholder="Your name..">
       
           <label for="lname">Last Name</label>
           <input type="text" id="lname" name="lastname" placeholder="Your last name..">
       
-          <label for="country">Country</label>
+          <label for="country">Reason for contact</label>
           <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+            <option value="australia">Business</option>
+            <option value="canada">Bored</option>
+            <option value="usa">Love</option>
           </select>
       
           <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      
-          <input type="submit" value="Submit">
+          <textarea id="subject" name="subject" placeholder="Tell me something sweet...." style="height:100px"></textarea>
+          <input class="submit-button" type="submit" value="Submit">
       
         </form>
       </div>
-    
+    </main>
 </body>
 </html>
