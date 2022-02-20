@@ -75,20 +75,20 @@ main {
 .grid-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 1em 1em;
-  position: relative;
-  grid-template-areas: "west north east",
-    "south south south";
+  grid-template-rows: 1fr 1fr;
+  /* gap: 1em 1em; */
+  grid-template-areas: "west-container noth-container east-container",
+    "south-container south-container south-container";
   word-break: break-all;
+  width: 100%;
+  height: 100%;
+  
 }
 
 .grid-content h1 {
   padding: 12px 0 0 3px;
   font-size: 2.3vw;
   text-transform: uppercase;
-  /* ohne funktion, warum? */
-  text-overflow: clip;
   font-family: 'Courier New', Courier, monospace;
   color: var(--nice);
   text-shadow: 1px 1px;
@@ -97,8 +97,8 @@ main {
 
 /* west container */
 .west-container {
-  height: 30vh;
-  width: 30vw;
+  grid-area: west-container;
+  width: 100%;
   display: flex;
   flex-flow: wrap row;
 }
@@ -154,6 +154,7 @@ main {
 
 /* north container */
 .north-container {
+  grid-area: north-container;
   height: 100%;
   width: 100%;
   display: flex;
@@ -211,6 +212,7 @@ main {
 
 /* east container */
 .east-container {
+  grid-area: east-container;
   height: 100%;
   width: 100%;
   display: flex;
@@ -267,11 +269,12 @@ main {
 }
 
 /* south content  */
-.south {
+/* .south {
   grid-column: 1/4;
-}
+} */
 
 .south-container {
+  grid-area: south-container;
   display: flex;
   flex-flow: wrap column;
   flex-basis: 100%;
