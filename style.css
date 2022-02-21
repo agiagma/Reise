@@ -1,3 +1,7 @@
+/* ++++++++++++++++++++++++++
+phil steht für philippinen
+++++++++++++++++++++++++++ */
+
 *,
 *::before,
 *::after {
@@ -6,17 +10,31 @@
   box-sizing: border-box;
 }
 
+/* var for color */
+:root {
+  --nice: rgb(189, 42, 111);
+  --cool: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'sans-serif';
+}
+
+body {
+  word-break: break-all;
+  background-image: url('Bilder/sand.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 header {
   display: flex;
   flex-flow: wrap row;
   position: relative;
-  flex-basis: 100vw;
-  height: 100px;
+
   justify-content: space-between;
   background-image: url('Bilder/water.jfif');
   background-position: left top;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   box-shadow: 0 2px 8px #227a7af8;
 }
 
@@ -28,12 +46,16 @@ header {
 }
 
 header img {
-  height: 100px;
-  width: 90px;
+  max-height: 90px;
+  width: auto;
   border-radius: 15%;
 }
 
 .header-text {
+  padding: 0 0 0 1em;
+  font-size: 2vh;
+  /* https://kulturbanause.de/blog/fliessend-skalierende-texte-und-schriftgroessen-mit-css-calc/ */
+  font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1600 - 320)));
   align-self: center;
   text-align: center;
 }
@@ -43,8 +65,15 @@ nav {
   padding: 0 2em 0 0;
 }
 
-nav ul {
+.d-flex {
   display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+nav ul {
+
   list-style: none;
 }
 
@@ -64,257 +93,110 @@ nav a {
 }
 
 main {
-  padding: 3em 1em 1em 1em;
-  background-image: url('Bilder/sand.jpg');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-  height: 90vh;
+  padding: 3em 1em;
+  background-color: rgba(255,255,255,.5);
+  min-height: 90vh;
 }
 
 .grid-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  /* gap: 1em 1em; */
-  grid-template-areas: "west-container noth-container east-container",
-    "south-container south-container south-container";
-  word-break: break-all;
-  width: 100%;
-  height: 100%;
-  
+  gap: 1em 1em;
+  grid-template-areas:
+    "west north east"
+    "south south south";
 }
 
 .grid-content h1 {
-  padding: 12px 0 0 3px;
-  font-size: 2.3vw;
+  padding: 5px 3px;
+  font-size: 1.3rem;
   text-transform: uppercase;
   font-family: 'Courier New', Courier, monospace;
   color: var(--nice);
   text-shadow: 1px 1px;
-  transition: 0.8s;
-}
-
-/* west container */
-.west-container {
-  grid-area: west-container;
-  width: 100%;
-  display: flex;
-  flex-flow: wrap row;
-}
-
-.west-container img {
-  position: absolute;
-}
-
-.west-container:hover {
-  transition: 0.8s;
-  transform: scale(1.01);
-}
-
-.kanada {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/kanada.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.usa {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/usa.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.alaska {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/alaska.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.groenland {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/groenland.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-/* north container */
-.north-container {
-  grid-area: north-container;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-flow: wrap row;
-}
-
-.north-container:hover {
-  transition: 0.8s;
-  transform: scale(1.01);
-}
-
-.north-container img {
-  position: absolute;
-}
-
-.schweden {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/schweden.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.norwegen {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/norwegen.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.finnland {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/finnland.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.daenemark {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/daenemark.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-/* east container */
-.east-container {
-  grid-area: east-container;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-flow: wrap row;
-}
-
-.east-container:hover {
-  transition: 0.8s;
-  transform: scale(1.01);
-}
-
-.east-container img {
-  position: absolute;
-}
-
-.china {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/china.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.korea {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/korea.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.japan {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/japan.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-.phil {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  background-image: url('Bilder/Laender/phil.jfif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
-}
-
-/* south content  */
-/* .south {
-  grid-column: 1/4;
-} */
-
-.south-container {
-  grid-area: south-container;
-  display: flex;
-  flex-flow: wrap column;
-  flex-basis: 100%;
-  height: 100%;
-  padding: 2em 0 0 0;
-  align-content: center;
-}
-
-.fast-lorem h1 {
+  background-color: rgba(255, 255, 255, .7);
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-shadow: 1px 5px 3px rgb(209, 40, 68);
-  text-transform: lowercase;
 }
 
-.fast-lorem h1::first-letter {
-  text-transform: uppercase;
+/* GridContainer */
+.grid-content section {
+  min-height: 40vw;
+}
+.west-container {
+  grid-area: west;
+}
+.north-container {
+  grid-area: north;
 }
 
-.fast-lorem h3 {
-  font-family: 'Times New Roman', Times, serif;
-  padding-bottom: 0.1em;
+.east-container {
+  grid-area: east;
+}
+.south {
+  grid-area: south;
+}
+.grid-content section:hover {
+  transition: 0.8s;
+  transform: scale(1.01);
 }
 
-.fast-lorem p {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.backgroundStyle > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-form {
-  padding-top: 1em;
-  align-self: center;
+
+/* Grid Items */
+.kanada {
+  background-image: url('Bilder/Laender/kanada.jfif');
 }
+.usa {
+  background-image: url('Bilder/Laender/usa.jfif');
+}
+.alaska {
+  background-image: url('Bilder/Laender/alaska.jfif');
+}
+.groenland {
+  background-image: url('Bilder/Laender/groenland.jfif');
+}
+.schweden {
+  background-image: url('Bilder/Laender/schweden.jfif');
+}
+.norwegen {
+  background-image: url('Bilder/Laender/norwegen.jfif');
+}
+.finnland {
+  background-image: url('Bilder/Laender/finnland.jfif');
+}
+.daenemark {
+  background-image: url('Bilder/Laender/daenemark.jfif');
+}
+.china {
+  background-image: url('Bilder/Laender/china.jfif');
+}
+.korea {
+  background-image: url('Bilder/Laender/korea.jfif');
+}
+.japan {
+  background-image: url('Bilder/Laender/japan.jfif');
+}
+.phil {
+  background-image: url('Bilder/Laender/phil.jfif');
+}
+.grid-content .d-flex > div {
+  flex: 1 1 50%;
+}
+
 
 .flagge {
-  height: 40px;
   width: 60px;
   opacity: .8;
   padding: 0 0 3px 3px;
-  align-self: flex-end;
-  cursor: pointer;
+  position: absolute;
+  bottom: 0;
 }
 
 .flagge:hover {
@@ -368,60 +250,77 @@ form {
   }
 }
 
-.img-slider {
-  display: none;
+
+form {
+  max-width: 960px;
+  margin: auto;
 }
-
-.south img {
-  vertical-align: middle;
-}
-
-.active {
-  background-color: #717171;
-}
-
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
-}
-
-.buchung-container {
+.form-control {
   display: flex;
-  flex-flow: wrap column;
-  justify-content: center;
-  padding: 5em;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-
+.form-control > * {
+  flex: 1 1 250px;
+  margin: 15px;
+}
+.form-control input, .form-control textarea, .form-control select {
+  padding: 0.5em;
+}
 .buchung-container label {
-  padding: 0.5em 0 0 0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.submit-button {
-  width: 5em;
+.btn {
+  background-color: beige;
+  color: black;
+  border: 1px solid;
+  padding: 10px;
+  display: block;
+  margin: 0 0 0 15px;
+}
+
+
+.fast-lorem h1 {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 1px 5px 3px rgb(209, 40, 68);
+  text-transform: lowercase;
+}
+
+.fast-lorem h1::first-letter {
+  text-transform: uppercase;
+}
+
+.fast-lorem h3 {
+  font-family: 'Times New Roman', Times, serif;
+  padding-bottom: 0.1em;
+}
+
+.fast-lorem p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form {
+  padding-top: 1em;
   align-self: center;
-  margin-top: 1em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+@media screen and (max-width: 960px) {
+  .grid-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "west north" 
+    "east south";
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .grid-content {
+    display: block;
+  }
+  .grid-content .d-flex > div {
+    flex: 1 1 100%;
+    min-height: 150px;
+  }
 }
